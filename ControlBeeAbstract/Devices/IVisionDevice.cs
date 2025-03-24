@@ -1,10 +1,10 @@
-﻿namespace ControlBeeAbstract.Devices;
+﻿using System.Text.Json.Nodes;
 
-using Dict = Dictionary<string, object?>;
+namespace ControlBeeAbstract.Devices;
 
 public interface IVisionDevice : IDevice
 {
-    void Trigger(int channel);
-    void Wait(int channel, int timeout);
-    Dict GetResult(int channel);
+    void Trigger(int channel, int inspectionIndex);
+    void Wait(int channel, int inspectionIndex, int timeout);
+    JsonObject GetResult(int channel, int inspectionIndex);
 }
