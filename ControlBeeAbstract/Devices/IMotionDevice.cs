@@ -43,4 +43,5 @@ public interface IMotionDevice : IDevice
 
     void Stop(int channel);
     void EStop(int channel);
+    void SearchZPhase(int channel, double velocity, double acceleration, double distance);
 }
