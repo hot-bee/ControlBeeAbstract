@@ -4,6 +4,8 @@ public interface IMotionDevice : IDevice
 {
     void Enable(int channel, bool value);
     bool IsEnabled(int channel);
+    bool IsAlarmed(int channel);
+    void ClearAlarm(int channel);
 
     void TrapezoidalMove(
         int channel,
