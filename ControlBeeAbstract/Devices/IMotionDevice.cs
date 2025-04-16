@@ -7,6 +7,8 @@ public interface IMotionDevice : IDevice
     bool IsAlarmed(int channel);
     void ClearAlarm(int channel);
 
+    void SetTorque(int channel, double torque);
+
     void TrapezoidalMove(
         int channel,
         double position,
@@ -26,6 +28,7 @@ public interface IMotionDevice : IDevice
     void SetActualPosition(int channel, double position);
     double GetCommandPosition(int channel);
     double GetActualPosition(int channel);
+
     void StartECam(
         int tableIndex,
         int masterChannel,
