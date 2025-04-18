@@ -28,6 +28,8 @@ public interface IMotionDevice : IDevice
     void SetActualPosition(int channel, double position);
     double GetCommandPosition(int channel);
     double GetActualPosition(int channel);
+    double GetCommandVelocity(int channel);
+    double GetActualVelocity(int channel);
 
     void StartECam(
         int tableIndex,
