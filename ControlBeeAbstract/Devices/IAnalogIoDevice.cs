@@ -14,4 +14,5 @@ public interface IAnalogIoDevice : IDevice
     short GetAnalogOutputSignedWord(int channel);
     uint GetAnalogOutputDWord(int channel);
     int GetAnalogOutputSignedDWord(int channel);
+    int GetAnalogInputSignedDWord(int channel);
 }
