@@ -51,4 +51,8 @@ public interface IMotionDevice : IDevice
     void Stop(int channel);
     void EStop(int channel);
     void SearchZPhase(int channel, double velocity, double acceleration, double distance);
+
+    public void SetSyncGearRatio(int masterChannel, int slaveChannel, double gearRatio, double velocity,
+        double acceleration,
+        double deceleration, double accelJerkRatio, double decelJerkRatio);
 }
