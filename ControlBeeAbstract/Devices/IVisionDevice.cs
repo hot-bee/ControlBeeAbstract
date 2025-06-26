@@ -10,6 +10,9 @@ public interface IVisionDevice : IDevice
     void Wait(int channel, int inspectionIndex, int timeout);
     JsonObject GetResult(int channel, int inspectionIndex);
     void EmbedVisionView(IntPtr parentHandle);
+    void StartContinuous(int channel);
+    void StopContinuous(int channel);
+    void FocusChannel(int channel);
     event EventHandler? VisionConnected;
     event EventHandler? VisionDisconnected;
 }
