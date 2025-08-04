@@ -23,6 +23,10 @@ public interface IMotionDevice : IDevice
     void JerkRatioSCurveMove((int channel, double position)[] channelAndPositions, double velocity, double acceleration,
         double deceleration, double accelJerkRatio, double decelJerkRatio);
 
+    public void JerkRatioSCurveRelativeMove(int channel, double distance, double velocity, double acceleration,
+        double deceleration,
+        double accelJerkRatio, double decelJerkRatio);
+
     void Wait(int channel);
     void Wait(int channel, int timeout);
     bool IsMoving(int channel);
