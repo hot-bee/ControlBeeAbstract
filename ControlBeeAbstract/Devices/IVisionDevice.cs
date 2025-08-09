@@ -8,6 +8,7 @@ public interface IVisionDevice : IDevice
     bool IsConnected();
     void Trigger(int channel, int inspectionIndex);
     void Wait(int channel, int inspectionIndex, int timeout);
+    void WaitGrabEnd(int channel, int inspectionIndex, int timeout);
     JsonObject GetResult(int channel, int inspectionIndex);
     void EmbedVisionView(IntPtr parentHandle);
     void StartContinuous(int channel);
