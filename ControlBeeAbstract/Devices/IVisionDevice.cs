@@ -9,6 +9,7 @@ public interface IVisionDevice : IDevice
     void Trigger(int channel, int inspectionIndex);
     void Wait(int channel, int inspectionIndex, int timeout);
     void WaitGrabEnd(int channel, int inspectionIndex, int timeout);
+    void WaitExposureEnd(int channel, int inspectionIndex, int timeout);
     JsonObject GetResult(int channel, int inspectionIndex);
     void EmbedVisionView(IntPtr parentHandle, int channel);
     void StartContinuous(int channel);
