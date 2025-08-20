@@ -6,11 +6,13 @@ public interface IVisionDevice : IDevice
 {
     void Connect();
     bool IsConnected();
-    void Trigger(int channel, int inspectionIndex);
+    void Trigger(int channel, int inspectionIndex, string? triggerId = null);
     void Wait(int channel, int inspectionIndex, int timeout);
+    void Wait(string triggerId, int timeout);
     void WaitGrabEnd(int channel, int inspectionIndex, int timeout);
     void WaitExposureEnd(int channel, int inspectionIndex, int timeout);
     JsonObject GetResult(int channel, int inspectionIndex);
+    JsonObject GetResult(string triggerId);
     void EmbedVisionView(IntPtr parentHandle, int channel);
     void StartContinuous(int channel);
     void StopContinuous(int channel);
