@@ -33,6 +33,10 @@ public interface IMotionDevice : IDevice
     void SetCommandAndActualPosition(int channel, double position);
     void SetCommandPosition(int channel, double position);
     void SetActualPosition(int channel, double position);
+    void SetAcceleration(int channel, double acceleration);
+    void SetDeceleration(int channel, double deceleration);
+    void SetAccelJerk(int channel, double jerk);
+    void SetDecelJerk(int channel, double jerk);
     double GetCommandPosition(int channel);
     double GetActualPosition(int channel);
     double GetCommandVelocity(int channel);
