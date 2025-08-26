@@ -1,6 +1,8 @@
-﻿using System.Text.Json.Nodes;
+﻿using Newtonsoft.Json.Linq;
 
 namespace ControlBeeAbstract.Devices;
+
+using Dict = Dictionary<string, object?>;
 
 public interface IVisionDevice : IDevice
 {
@@ -11,8 +13,8 @@ public interface IVisionDevice : IDevice
     void Wait(string triggerId, int timeout);
     void WaitGrabEnd(int channel, int inspectionIndex, int timeout);
     void WaitExposureEnd(int channel, int inspectionIndex, int timeout);
-    JsonObject GetResult(int channel, int inspectionIndex);
-    JsonObject GetResult(string triggerId);
+    JObject GetResult(int channel, int inspectionIndex);
+    JObject GetResult(string triggerId);
     void EmbedVisionView(IntPtr parentHandle, int channel);
     void StartContinuous(int channel);
     void StopContinuous(int channel);
@@ -21,4 +23,6 @@ public interface IVisionDevice : IDevice
     void SaveRecipe(string recipeName);
     event EventHandler? VisionConnected;
     event EventHandler? VisionDisconnected;
+    event EventHandler<JObject?>? EventOccurred;
+    void RequestRecipeInfo();
 }
