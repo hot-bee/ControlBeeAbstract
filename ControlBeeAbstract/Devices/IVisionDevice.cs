@@ -17,6 +17,8 @@ public interface IVisionDevice : IDevice
     void StartContinuous(int channel);
     void StopContinuous(int channel);
     void FocusChannel(int channel);
+    void LoadRecipe(string recipeName);
+    void SaveRecipe(string recipeName);
     event EventHandler? VisionConnected;
     event EventHandler? VisionDisconnected;
 }
