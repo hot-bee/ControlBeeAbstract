@@ -1,4 +1,6 @@
-﻿namespace ControlBeeAbstract.Devices;
+﻿using ControlBeeAbstract.Constants;
+
+namespace ControlBeeAbstract.Devices;
 
 public interface IMotionDevice : IDevice
 {
@@ -27,9 +29,9 @@ public interface IMotionDevice : IDevice
         double deceleration,
         double accelJerkRatio, double decelJerkRatio);
 
-    void Wait(int channel);
-    void Wait(int channel, int timeout);
-    bool IsMoving(int channel);
+    void Wait(int channel, PositionType type = PositionType.CommandAndActual);
+    void Wait(int channel, int timeout, PositionType type = PositionType.CommandAndActual);
+    bool IsMoving(int channel, PositionType type = PositionType.CommandAndActual);
     void SetCommandAndActualPosition(int channel, double position);
     void SetCommandPosition(int channel, double position);
     void SetActualPosition(int channel, double position);
