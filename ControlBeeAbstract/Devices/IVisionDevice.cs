@@ -22,7 +22,7 @@ public interface IVisionDevice : IDevice
     void FocusChannel(int channel);
     void LoadRecipe(string recipeName);
     void SaveRecipe(string recipeName);
-    void SetLightOnOff(int channel, bool on);
+    void SetLightOnOff(int channel, int inspIndex, bool on);
     event EventHandler? VisionConnected;
     event EventHandler? VisionDisconnected;
     event EventHandler<JObject?>? EventOccurred;
