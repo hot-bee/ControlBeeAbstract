@@ -19,6 +19,8 @@ public interface IMotionDevice : IDevice
         double deceleration
     );
 
+    void OnBeforeInitialize(int channel);
+
     void JerkRatioSCurveMove(int channel, double position, double velocity, double acceleration,
         double deceleration, double accelJerkRatio, double decelJerkRatio);
 
