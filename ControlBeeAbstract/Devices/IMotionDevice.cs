@@ -45,6 +45,7 @@ public interface IMotionDevice : IDevice
     double GetActualPosition(int channel);
     double GetCommandVelocity(int channel);
     double GetActualVelocity(int channel);
+    void BuiltinInitialize(int channel);
 
     void StartECam(
         int tableIndex,
