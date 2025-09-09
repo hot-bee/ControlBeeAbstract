@@ -4,6 +4,12 @@ namespace ControlBeeAbstract.Devices;
 
 public abstract class Device : IDevice
 {
-    public abstract void Init(Dict config);
+    public string DeviceName { get; private set; } = "";
+
+    public virtual void Init(string deviceName, Dict config)
+    {
+        DeviceName = deviceName;
+    }
+
     public abstract void Dispose();
 }

@@ -4,5 +4,6 @@ using Dict = Dictionary<string, object?>;
 
 public interface IDevice : IDisposable
 {
-    void Init(Dict config);
+    string DeviceName { get; }
+    void Init(string deviceName, Dict config);
 }

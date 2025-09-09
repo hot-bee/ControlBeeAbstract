@@ -1,4 +1,5 @@
 ﻿using ControlBeeAbstract.Constants;
+using Dict = System.Collections.Generic.Dictionary<string, object?>;
 
 namespace ControlBeeAbstract.Devices;
 
@@ -71,4 +72,6 @@ public interface IMotionDevice : IDevice
     public void SetSyncGearRatio(int masterChannel, int slaveChannel, double gearRatio, double velocity,
         double acceleration,
         double deceleration, double accelJerkRatio, double decelJerkRatio);
+
+    public void SpecialCommand(int channel, Dict data);
 }
