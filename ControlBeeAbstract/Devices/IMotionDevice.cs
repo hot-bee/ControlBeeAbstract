@@ -25,7 +25,7 @@ public interface IMotionDevice : IDevice
     void JerkRatioSCurveMove(int channel, double position, double velocity, double acceleration,
         double deceleration, double accelJerkRatio, double decelJerkRatio);
 
-    void JerkRatioSCurveMove((int channel, double position)[] channelAndPositions, double velocity, double acceleration,
+    void InterpolateMove((int channel, double position)[] channelAndPositions, double velocity, double acceleration,
         double deceleration, double accelJerkRatio, double decelJerkRatio);
 
     public void JerkRatioSCurveRelativeMove(int channel, double distance, double velocity, double acceleration,
