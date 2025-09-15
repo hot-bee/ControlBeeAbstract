@@ -10,4 +10,6 @@ public class DeviceError : FatalSequenceError
         : base(message)
     {
     }
+
+    public int ErrorCode { get; set; }
 }
