@@ -23,8 +23,10 @@ public interface IVisionDevice : IDevice
     void LoadRecipe(string recipeName);
     void SaveRecipe(string recipeName);
     void SetLightOnOff(int channel, int inspectionIndex, bool on);
+    void SetLightValue(int channel, int inspectionIndex, int lightChannel, double value);
     event EventHandler? VisionConnected;
     event EventHandler? VisionDisconnected;
-    event EventHandler<JObject?>? EventOccurred;
+    event EventHandler<(string eventName, JObject? payload)>? EventOccurred;
     void RequestRecipeInfo();
+    void RequestData(string dataName);
 }
