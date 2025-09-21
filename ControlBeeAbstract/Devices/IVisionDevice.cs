@@ -21,7 +21,7 @@ public interface IVisionDevice : IDevice
     void StopContinuous(int channel);
     void FocusChannel(int channel);
     void LoadRecipe(string recipeName);
-    void SaveRecipe(string recipeName);
+    void SaveRecipe(string? recipeName);
     void SetLightOnOff(int channel, int inspectionIndex, bool on);
     void SetLightValue(int channel, int inspectionIndex, int lightChannel, double value);
     event EventHandler? VisionConnected;
