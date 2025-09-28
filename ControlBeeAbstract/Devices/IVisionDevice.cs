@@ -16,7 +16,7 @@ public interface IVisionDevice : IDevice
     void WaitExposureEnd(int channel, int inspectionIndex, int timeout);
     JObject GetResult(int channel, int inspectionIndex);
     JObject GetResult(string triggerId);
-    void EmbedVisionView(IntPtr parentHandle, int channel);
+    void EmbedVisionView(IntPtr parentHandle, Dict options);
     void StartContinuous(int channel);
     void StopContinuous(int channel);
     void FocusChannel(int channel);
