@@ -49,6 +49,7 @@ public interface IMotionDevice : IDevice
     double GetCommandVelocity(int channel);
     double GetActualVelocity(int channel);
     void BuiltinInitialize(int channel);
+    void SetSoftwareLimit(int channel, bool enable, double negativeLimit, double positiveLimit);
 
     void StartECam(
         int tableIndex,
