@@ -6,6 +6,7 @@ public interface IBufferDevice : IDevice
     void StopBuffer(int bufferIndex);
 
     bool IsRunningBuffer(int bufferIndex);
+    bool IsInOpenLoopControl(int channel);
 
     object ReadVariable(string variable, int bufferIndex = -1,
         int from1 = -1, int to1 = -1, int from2 = -1, int to2 = -1);
