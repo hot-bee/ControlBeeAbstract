@@ -37,6 +37,7 @@ public interface IMotionDevice : IDevice
     void Wait(int channel, PositionType type = PositionType.CommandAndActual);
     void Wait(int channel, int timeout, PositionType type = PositionType.CommandAndActual);
     bool IsMoving(int channel, PositionType type = PositionType.CommandAndActual);
+    bool IsInOpenLoopControl(int channel);
     void SetCommandAndActualPosition(int channel, double position);
     void SetCommandPosition(int channel, double position);
     void SetActualPosition(int channel, double position);
