@@ -6,6 +6,7 @@ public interface IDigitalIoDevice : IDevice
     void SetDigitalOutputBit(int channel, bool value);
     bool GetDigitalOutputBit(int channel);
     event EventHandler<(int channel, bool value)>? OutputBitChanged;
+    event EventHandler<(int channel, bool value)>? InputBitChanged;
     void SetDigitalInputBitInverted(int channel, bool inverted);
     bool GetDigitalInputBitInverted(int channel);
 }
