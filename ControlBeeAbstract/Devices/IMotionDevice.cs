@@ -22,17 +22,36 @@ public interface IMotionDevice : IDevice
 
     void OnBeforeInitialize(int channel);
 
-    void JerkRatioSCurveMove(int channel, double position, double velocity, double acceleration,
-        double deceleration, double accelJerkRatio, double decelJerkRatio);
+    void JerkRatioSCurveMove(
+        int channel,
+        double position,
+        double velocity,
+        double acceleration,
+        double deceleration,
+        double accelJerkRatio,
+        double decelJerkRatio
+    );
 
     void JerkRatioSCurveMultiMove(JerkRatioSCurveMoveParameter[] parameters);
 
-    void InterpolateMove((int channel, double position)[] channelAndPositions, double velocity, double acceleration,
-        double deceleration, double accelJerkRatio, double decelJerkRatio);
-
-    public void JerkRatioSCurveRelativeMove(int channel, double distance, double velocity, double acceleration,
+    void InterpolateMove(
+        (int channel, double position)[] channelAndPositions,
+        double velocity,
+        double acceleration,
         double deceleration,
-        double accelJerkRatio, double decelJerkRatio);
+        double accelJerkRatio,
+        double decelJerkRatio
+    );
+
+    public void JerkRatioSCurveRelativeMove(
+        int channel,
+        double distance,
+        double velocity,
+        double acceleration,
+        double deceleration,
+        double accelJerkRatio,
+        double decelJerkRatio
+    );
 
     void Wait(int channel, PositionType type = PositionType.CommandAndActual);
     void Wait(int channel, int timeout, PositionType type = PositionType.CommandAndActual);
@@ -66,16 +85,29 @@ public interface IMotionDevice : IDevice
     bool GetNegativeLimitSensor(int channel);
     bool GetPositiveLimitSensor(int channel);
 
-    void VelocityMove(int channel, double velocity, double acceleration,
-        double deceleration, double accelJerkRatio, double decelJerkRatio);
+    void VelocityMove(
+        int channel,
+        double velocity,
+        double acceleration,
+        double deceleration,
+        double accelJerkRatio,
+        double decelJerkRatio
+    );
 
     void Stop(int channel);
     void EStop(int channel);
     void SearchZPhase(int channel, double velocity, double acceleration, double distance);
 
-    public void SetSyncGearRatio(int masterChannel, int slaveChannel, double gearRatio, double velocity,
+    public void SetSyncGearRatio(
+        int masterChannel,
+        int slaveChannel,
+        double gearRatio,
+        double velocity,
         double acceleration,
-        double deceleration, double accelJerkRatio, double decelJerkRatio);
+        double deceleration,
+        double accelJerkRatio,
+        double decelJerkRatio
+    );
 
     public void SpecialCommand(int channel, Dict data);
 }

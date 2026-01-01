@@ -2,12 +2,8 @@
 
 public class VisionError : SequenceError
 {
-    public VisionError()
-    {
-    }
+    public VisionError() { }
 
     public VisionError(string message)
-        : base(message)
-    {
-    }
+        : base(message) { }
 }
