@@ -32,6 +32,16 @@ public interface IMotionDevice : IDevice
         double decelJerkRatio
     );
 
+    void PrepareJerkRatioSCurveMove(
+        int channel,
+        double position,
+        double velocity,
+        double acceleration,
+        double deceleration,
+        double accelJerkRatio,
+        double decelJerkRatio
+    );
+
     void JerkRatioSCurveMultiMove(JerkRatioSCurveMoveParameter[] parameters);
 
     void InterpolateMove(
@@ -43,7 +53,17 @@ public interface IMotionDevice : IDevice
         double decelJerkRatio
     );
 
-    public void JerkRatioSCurveRelativeMove(
+    void JerkRatioSCurveRelativeMove(
+        int channel,
+        double distance,
+        double velocity,
+        double acceleration,
+        double deceleration,
+        double accelJerkRatio,
+        double decelJerkRatio
+    );
+
+    void PrepareJerkRatioSCurveRelativeMove(
         int channel,
         double distance,
         double velocity,
@@ -98,7 +118,7 @@ public interface IMotionDevice : IDevice
     void EStop(int channel);
     void SearchZPhase(int channel, double velocity, double acceleration, double distance);
 
-    public void SetSyncGearRatio(
+    void SetSyncGearRatio(
         int masterChannel,
         int slaveChannel,
         double gearRatio,
@@ -109,5 +129,10 @@ public interface IMotionDevice : IDevice
         double decelJerkRatio
     );
 
-    public void SpecialCommand(int channel, Dict data);
+    void SpecialCommand(int channel, Dict data);
+    void ExecutePreparedMoves();
+    void ExecutePreparedMovesWhenCountIs(int count);
+    void ClearPreparedMoves();
+    void WaitUntilMoveQueueEmpty(int millisecondsTimeout);
+    int GetPreparedMoveCount();
 }
