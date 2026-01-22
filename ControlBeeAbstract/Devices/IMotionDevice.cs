@@ -129,6 +129,8 @@ public interface IMotionDevice : IDevice
         double decelJerkRatio
     );
 
+    void ResolveSync(int slaveChannel);
+
     void SpecialCommand(int channel, Dict data);
     void ExecutePreparedMoves();
     void ExecutePreparedMovesWhenCountIs(int count);
