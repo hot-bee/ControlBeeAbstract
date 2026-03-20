@@ -25,6 +25,7 @@ public interface IVisionDevice : IDevice
     void SaveImage(int channel, string savePath, string? triggerId);
     void SetLightOnOff(int channel, int inspectionIndex, bool on);
     void SetLightValue(int channel, int inspectionIndex, int lightChannel, double value);
+    void SetResolution(int channel, double resolution);
     event EventHandler? VisionConnected;
     event EventHandler? VisionDisconnected;
     event EventHandler<(string eventName, JObject? payload)>? EventOccurred;
