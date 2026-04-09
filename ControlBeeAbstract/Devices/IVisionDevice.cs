@@ -8,8 +8,8 @@ public interface IVisionDevice : IDevice
 {
     void Connect();
     bool IsConnected();
-    void Trigger(int channel, int inspectionIndex, string? triggerId, Dict? options = null);
-    void Trigger(int channel, int inspectionIndex, Dict? options = null);
+    void Trigger(int channel, int inspectionIndex, string? triggerId, Dict? options = null, bool softwareTrigger = true);
+    void Trigger(int channel, int inspectionIndex, Dict? options = null, bool softwareTrigger = true);
     void Wait(int channel, int inspectionIndex, int timeout);
     void Wait(string triggerId, int timeout);
     void WaitGrabEnd(int channel, int inspectionIndex, int timeout);
