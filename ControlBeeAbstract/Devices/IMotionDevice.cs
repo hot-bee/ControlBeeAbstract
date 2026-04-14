@@ -88,6 +88,8 @@ public interface IMotionDevice : IDevice
     double GetActualPosition(int channel);
     double GetCommandVelocity(int channel);
     double GetActualVelocity(int channel);
+    double GetCommandTorque(int channel);
+    double GetActualTorque(int channel);
     void BuiltinInitialize(int channel);
     void SetSoftwareLimit(int channel, bool enable, double negativeLimit, double positiveLimit);
 
