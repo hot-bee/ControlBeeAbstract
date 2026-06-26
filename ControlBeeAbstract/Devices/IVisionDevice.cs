@@ -23,6 +23,7 @@ public interface IVisionDevice : IDevice
     void LoadRecipe(string recipeName);
     void SaveRecipe(string? recipeName);
     void SaveImage(int channel, string savePath, string? triggerId);
+    void CancelTrigger(int channel, int inspectionIndex);
     void SetLightOnOff(int channel, int inspectionIndex, bool on);
     void SetLightValue(int channel, int inspectionIndex, int lightChannel, double value);
     void SetResolution(int channel, double resolution);
